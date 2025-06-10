@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 yc_url = 'https://news.ycombinator.com/'
 greatest_movies_url = 'https://web.archive.org/web/20200518073855/https://www.empireonline.com/movies/features/best-movies-2/'
 
-def yc_scrapper(url):
+def hacker_news_scraper(url):
     response = requests.get(url)
 
     yc_web_page = response.text
@@ -22,7 +22,7 @@ def yc_scrapper(url):
 
 
 
-def movies_scrapper(url):
+def empire_movie_scraper(url):
     response = requests.get(url)
     movies_page = response.text
 
@@ -46,4 +46,4 @@ def movies_scrapper(url):
 
 
 # yc_scrapper(yc_url)
-movies_scrapper(greatest_movies_url)
+empire_movie_scraper(greatest_movies_url)
