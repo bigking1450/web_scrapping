@@ -16,6 +16,9 @@ def hacker_news_scraper(url):
         for a in span.find_all('a', recursive=False)
     ]
 
+    # article_upvotes = [int(score.getText().split()[0]) for score in soup.find_all('span', class_='score')]
+
+
     for link in links:
         print(f'Link: {link.get('href')}')
         print(f'Title: {link.getText()}')
@@ -45,5 +48,5 @@ def empire_movie_scraper(url):
     
 
 
-# yc_scrapper(yc_url)
-empire_movie_scraper(greatest_movies_url)
+hacker_news_scraper(yc_url)
+# empire_movie_scraper(greatest_movies_url)
