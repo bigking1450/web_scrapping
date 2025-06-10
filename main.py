@@ -30,10 +30,19 @@ def movies_scrapper(url):
 
     movies = soup.find_all('h3', class_='title')
 
+    # displaying the movies from 100 to 1 to the console
     for movie in movies:
         print(f'Title: {movie.getText()}\n')
 
-    # print(movies)
+    # =========================================
+    # displaying the movies from 1 t0 100 and writing the movies to a text file.
+    movie_titles = [movie.getText() for movie in movies]
+    all_movies = movie_titles[::-1]
+
+    with open('movies.txt', mode='w', encoding='utf-8') as file:
+        for movie in all_movies:
+            file.write(f'{movie}\n')
+    
 
 
 # yc_scrapper(yc_url)
